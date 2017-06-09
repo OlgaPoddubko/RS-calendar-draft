@@ -9853,17 +9853,19 @@ var MonthDates = function (_React$Component) {
     _classCallCheck(this, MonthDates);
 
     // необходимо разобраться с state - props, т.к. месяц не обновляется, все по today
-    /*
-        this.today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-        this.year = this.today.getFullYear();
-        this.month = this.today.getMonth();
-    */
+
     var _this = _possibleConstructorReturn(this, (MonthDates.__proto__ || Object.getPrototypeOf(MonthDates)).call(this, props));
 
-    _this.year = new Date().getFullYear();
-    _this.month = new Date().getMonth();
-    // this.date = new Date().getDate(); // не используется
     _this.today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+    _this.year = _this.today.getFullYear();
+    _this.month = _this.today.getMonth();
+
+    /*
+        this.year = new Date().getFullYear();
+        this.month = new Date().getMonth();
+       // this.date = new Date().getDate(); // не используется
+        this.today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
+        */
     return _this;
   }
 
@@ -9933,6 +9935,8 @@ var MonthDates = function (_React$Component) {
                 case 'deadline':
                   className = className + ' deadline';
                   break;
+                default:
+                  className = className + ' r-past';
               }
 
               console.log(className);

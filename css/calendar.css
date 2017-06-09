@@ -34,7 +34,7 @@
   overflow-wrap: break-word;
 }
 .r-calendar .r-head{
-  flex-grow: 1;
+  flex-grow: .5;
   flex-basis: 0;
 }
 .r-calendar .r-prev,
@@ -81,11 +81,12 @@
   flex-basis: max-content;
 }
 .r-calendar .r-weekdays{
-  flex-grow: 1;
+  flex-grow: .5;
   flex-basis: 0;
 }
 .r-calendar .r-weekdays .r-cell{
   font-weight: bold;
+  background-color: #f7f5f6;
 }
 .r-calendar .r-dates{
   display: flex;
@@ -159,15 +160,20 @@
   position: relative;
   width: 100%;
 }
+/*
 .r-calendar:after{
   content: "";
   display: block;
   padding-bottom: 100%;
 }
+*/
 .r-calendar .r-inner{
   position: absolute;
+  width: 1200px;
+  height: 700px;
+  /*
   width: 100%;
-  height: 100%;
+  height: 100%;*/
   display: flex;
   flex-flow: column nowrap;
 }
