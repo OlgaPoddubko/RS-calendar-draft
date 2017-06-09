@@ -8,8 +8,8 @@ export default class MonthDates extends React.Component {
     // необходимо разобраться с state - props, т.к. месяц не обновляется, все по today
 
     this.today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-    this.year = this.today.getFullYear();
-    this.month = this.today.getMonth();
+    this.year = this.props.year/*.getFullYear()*/;
+    this.month = this.props.month/*today.getMonth()*/;
 
 /*
     this.year = new Date().getFullYear();
@@ -89,14 +89,12 @@ export default class MonthDates extends React.Component {
                     break;
                   case 'deadline': className = className + ' deadline';
                     break;
-                 // default: className = className + ' r-past'; не имеет смысла
                 }
-
-console.log(className);
 
               } else {
                 console.log('no coincidence');
                 RSEvent = '';
+                className = className + ' empty';
               }
 
               return React.createElement(

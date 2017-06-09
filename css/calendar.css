@@ -131,7 +131,7 @@
   border: solid 2px #cd000d;
 }
 
-.r-calendar .r-cell.r-date:not(.r-past):hover{
+.r-calendar .r-cell.r-date:not(.empty):hover{
   border: solid 2px #5f6f7f;
 }
 /*
@@ -148,9 +148,9 @@
   color: #fff;
 }
 */
-.r-calendar .r-cell.r-date.r-past{
+.r-calendar .r-cell.r-date.empty{
   color: #999999;
-  cursor: not-allowed;
+  cursor: default;
 }
 .r-calendar .r-weeknum{
   color: #999999;
@@ -176,4 +176,13 @@
   height: 100%;*/
   display: flex;
   flex-flow: column nowrap;
+}
+.r-description {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+  background: red;
+  border: 2px solid black;
 }

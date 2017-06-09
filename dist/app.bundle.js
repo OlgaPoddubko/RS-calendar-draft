@@ -9655,6 +9655,16 @@ var Calendar = function (_React$Component) {
         selectedElement: element.target
       });
       alert('Hello!'); // место для вашей рекламы :)
+      /*
+      // неверно
+      render () {
+         return React.createElement(
+         'div',
+          { className: 'r-description' },
+          'Here is description'
+        )
+      }
+      */
     }
   }, {
     key: 'render',
@@ -9857,8 +9867,8 @@ var MonthDates = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MonthDates.__proto__ || Object.getPrototypeOf(MonthDates)).call(this, props));
 
     _this.today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
-    _this.year = _this.today.getFullYear();
-    _this.month = _this.today.getMonth();
+    _this.year = _this.props.year /*.getFullYear()*/;
+    _this.month = _this.props.month /*today.getMonth()*/;
 
     /*
         this.year = new Date().getFullYear();
@@ -9935,14 +9945,11 @@ var MonthDates = function (_React$Component) {
                 case 'deadline':
                   className = className + ' deadline';
                   break;
-                default:
-                  className = className + ' r-past';
               }
-
-              console.log(className);
             } else {
               console.log('no coincidence');
               RSEvent = '';
+              className = className + ' empty';
             }
 
             return _react2.default.createElement('div', { className: className, /*id: current, */role: 'button', tabIndex: '0', onClick: that.props.onSelect.bind(that, that.year, that.month, d) }, d + RSEvent);

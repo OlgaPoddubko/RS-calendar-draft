@@ -94,6 +94,17 @@ export default class Calendar extends React.Component {
       selectedElement: element.target
     });
     alert('Hello!'); // место для вашей рекламы :)
+    /*
+    // неверно
+    render () {
+
+      return React.createElement(
+       'div',
+        { className: 'r-description' },
+        'Here is description'
+      )
+    }
+    */
   }
 
   render () {
